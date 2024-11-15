@@ -1,0 +1,27 @@
+.playing-field {
+    width: 60vh;
+}
+
+mat-grid-tile {
+    .cell {
+        width: 90%;
+        height: 90%;
+
+        &.untouched {
+            background-color: lightblue;
+        }
+
+        &.incorrect {
+            background-color: lightcoral;
+        }
+
+        &.correct {
+            background-color: lightgreen;
+        }
+
+        &.in-process {
+            background-color: lightyellow;
+        }
+    }
+    
+}

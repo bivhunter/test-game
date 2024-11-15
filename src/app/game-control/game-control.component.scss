@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 20px;
+
+    .submit {
+        width: 180px;
+        height: 56px;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="playing-field">
+    @if(field$ | async; as field) {
+        <mat-grid-list [cols]="fieldWidth" >
+            @for(cell of field; track cell.id) {
+                
+                <mat-grid-tile>
+                    <button [ngClass]="{
+                        'untouched': cell.status === cellTypes.UNTOUCHED,
+                        'in-process': cell.status === cellTypes.IN_PROCESS,
+                        'correct': cell.status === cellTypes.CORRECT,
+                        'incorrect': cell.status === cellTypes.INCORRECT,
+                    }" 
+                            mat-mini-fab 
+                            class="cell"
+                            (click)="click(cell)">
+                    </button>
+                </mat-grid-tile>
+            }
+    
+        </mat-grid-list>
+
+    }
+</div>

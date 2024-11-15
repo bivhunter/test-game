@@ -1,0 +1,18 @@
+<div class="game-control">
+  <form [formGroup]="form" (ngSubmit)="startGame()">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter round duration</mat-label>
+      <input matInput placeholder="1000" formControlName="roundDuration" required (blur)="updateErrorMessage()"/>
+      @if (form.invalid) {
+        <mat-error>{{ errorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    <button mat-raised-button
+            class="submit primary"
+            type="submit"
+            [disabled]="(isGameStarted$ | async) || form.invalid">
+      <mat-icon>play_arrow</mat-icon>
+      Start game
+    </button>
+  </form>
+</div>
